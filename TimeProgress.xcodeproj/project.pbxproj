@@ -6,14 +6,77 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		67F50A432D63B6D7008AAE4B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F50A422D63B6D7008AAE4B /* WidgetKit.framework */; };
+		67F50A452D63B6D7008AAE4B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F50A442D63B6D7008AAE4B /* SwiftUI.framework */; };
+		67F50A532D63B6D8008AAE4B /* TPWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 67F50A402D63B6D7008AAE4B /* TPWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67F50A512D63B6D8008AAE4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67F50A1C2D63B56D008AAE4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67F50A3F2D63B6D7008AAE4B;
+			remoteInfo = TPWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		67F50A582D63B6D8008AAE4B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				67F50A532D63B6D8008AAE4B /* TPWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		67F50A242D63B56D008AAE4B /* TimeProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F50A402D63B6D7008AAE4B /* TPWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TPWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F50A422D63B6D7008AAE4B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		67F50A442D63B6D7008AAE4B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		67F50A542D63B6D8008AAE4B /* Exceptions for "TPWidget" folder in "TPWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 67F50A3F2D63B6D7008AAE4B /* TPWidgetExtension */;
+		};
+		67F50A5A2D63B818008AAE4B /* Exceptions for "TimeProgress" folder in "TPWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DateUtils.swift,
+				LinearProgress.swift,
+				PieChart.swift,
+			);
+			target = 67F50A3F2D63B6D7008AAE4B /* TPWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		67F50A262D63B56D008AAE4B /* TimeProgress */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				67F50A5A2D63B818008AAE4B /* Exceptions for "TimeProgress" folder in "TPWidgetExtension" target */,
+			);
 			path = TimeProgress;
+			sourceTree = "<group>";
+		};
+		67F50A462D63B6D7008AAE4B /* TPWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				67F50A542D63B6D8008AAE4B /* Exceptions for "TPWidget" folder in "TPWidgetExtension" target */,
+			);
+			path = TPWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +89,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67F50A3D2D63B6D7008AAE4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F50A452D63B6D7008AAE4B /* SwiftUI.framework in Frameworks */,
+				67F50A432D63B6D7008AAE4B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				67F50A262D63B56D008AAE4B /* TimeProgress */,
+				67F50A462D63B6D7008AAE4B /* TPWidget */,
+				67F50A412D63B6D7008AAE4B /* Frameworks */,
 				67F50A252D63B56D008AAE4B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +115,18 @@
 			isa = PBXGroup;
 			children = (
 				67F50A242D63B56D008AAE4B /* TimeProgress.app */,
+				67F50A402D63B6D7008AAE4B /* TPWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		67F50A412D63B6D7008AAE4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67F50A422D63B6D7008AAE4B /* WidgetKit.framework */,
+				67F50A442D63B6D7008AAE4B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +139,12 @@
 				67F50A202D63B56D008AAE4B /* Sources */,
 				67F50A212D63B56D008AAE4B /* Frameworks */,
 				67F50A222D63B56D008AAE4B /* Resources */,
+				67F50A582D63B6D8008AAE4B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				67F50A522D63B6D8008AAE4B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				67F50A262D63B56D008AAE4B /* TimeProgress */,
@@ -69,6 +155,28 @@
 			productName = TimeProgress;
 			productReference = 67F50A242D63B56D008AAE4B /* TimeProgress.app */;
 			productType = "com.apple.product-type.application";
+		};
+		67F50A3F2D63B6D7008AAE4B /* TPWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67F50A552D63B6D8008AAE4B /* Build configuration list for PBXNativeTarget "TPWidgetExtension" */;
+			buildPhases = (
+				67F50A3C2D63B6D7008AAE4B /* Sources */,
+				67F50A3D2D63B6D7008AAE4B /* Frameworks */,
+				67F50A3E2D63B6D7008AAE4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				67F50A462D63B6D7008AAE4B /* TPWidget */,
+			);
+			name = TPWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = TPWidgetExtension;
+			productReference = 67F50A402D63B6D7008AAE4B /* TPWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +189,9 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					67F50A232D63B56D008AAE4B = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					67F50A3F2D63B6D7008AAE4B = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -100,12 +211,20 @@
 			projectRoot = "";
 			targets = (
 				67F50A232D63B56D008AAE4B /* TimeProgress */,
+				67F50A3F2D63B6D7008AAE4B /* TPWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		67F50A222D63B56D008AAE4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F50A3E2D63B6D7008AAE4B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +241,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		67F50A3C2D63B6D7008AAE4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67F50A522D63B6D8008AAE4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67F50A3F2D63B6D7008AAE4B /* TPWidgetExtension */;
+			targetProxy = 67F50A512D63B6D8008AAE4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		67F50A312D63B56E008AAE4B /* Debug */ = {
@@ -293,6 +427,60 @@
 			};
 			name = Release;
 		};
+		67F50A562D63B6D8008AAE4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TPWidget/TPWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TPWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TPWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bohboh.TimeProgress.TPWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		67F50A572D63B6D8008AAE4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TPWidget/TPWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TPWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TPWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bohboh.TimeProgress.TPWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -310,6 +498,15 @@
 			buildConfigurations = (
 				67F50A342D63B56E008AAE4B /* Debug */,
 				67F50A352D63B56E008AAE4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67F50A552D63B6D8008AAE4B /* Build configuration list for PBXNativeTarget "TPWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67F50A562D63B6D8008AAE4B /* Debug */,
+				67F50A572D63B6D8008AAE4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
