@@ -48,17 +48,17 @@ struct ContentView: View {
 
                 HStack {
                     VStack {
-                        PieChart(percentage: dayPercentage, size: 120)
+                        CircleProgressView(value: dayPercentage / 100, color: .blue, size: 120, lineWidth: 10)
                         Text("Today")
                     }
 
                     VStack {
-                        PieChart(percentage: monthPercentage, size: 120)
+                        CircleProgressView(value: monthPercentage / 100, color: .blue, size: 120, lineWidth: 10)
                         Text("This Month")
                     }
 
                     VStack {
-                        PieChart(percentage: yearPercentage, size: 120)
+                        CircleProgressView(value: yearPercentage / 100, color: .blue, size: 120, lineWidth: 10)
                         Text("This Year")
                     }
                 }

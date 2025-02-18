@@ -72,24 +72,38 @@ struct TimeProgressWidgetView: View {
     var body: some View {
         HStack(spacing: 5) {
             VStack {
-                PieChart(percentage: entry.dayPercentage, size: 80)
-                    .frame(width: 80, height: 120)
+                CircleProgressView(
+                    value: entry.dayPercentage / 100,
+                    color: getProgressColor(for: entry.dayPercentage), size: 80,
+                    lineWidth: 10
+                )
+                .frame(width: 80, height: 120)
                 Text("Day")
                     .font(.system(size: 14))
             }
             .padding()
 
             VStack {
-                PieChart(percentage: entry.monthPercentage, size: 80)
-                    .frame(width: 80, height: 120)
+                CircleProgressView(
+                    value: entry.monthPercentage / 100,
+                    color: getProgressColor(for: entry.monthPercentage),
+                    size: 80,
+                    lineWidth: 10
+                )
+                .frame(width: 80, height: 120)
                 Text("Month")
                     .font(.system(size: 14))
             }
             .padding()
 
             VStack {
-                PieChart(percentage: entry.yearPercentage, size: 80)
-                    .frame(width: 80, height: 120)
+                CircleProgressView(
+                    value: entry.yearPercentage / 100,
+                    color: getProgressColor(for: entry.yearPercentage),
+                    size: 80,
+                    lineWidth: 10
+                )
+                .frame(width: 80, height: 120)
                 Text("Year")
                     .font(.system(size: 14))
             }
@@ -121,9 +135,12 @@ struct TimeBatteryWidgetView: View {
     var body: some View {
         HStack(spacing: 5) {
             VStack {
-                PieChart(
-                    percentage: (100.0 - entry.dayPercentage), size: 80,
-                    useBatteryStyle: true
+                CircleProgressView(
+                    value: 1 - entry.dayPercentage / 100,
+                    color: getProgressColor(
+                        for: entry.dayPercentage, useBatteryStyle: true),
+                    size: 80,
+                    lineWidth: 10
                 )
                 .frame(width: 80, height: 120)
                 Text("Day")
@@ -132,9 +149,12 @@ struct TimeBatteryWidgetView: View {
             .padding()
 
             VStack {
-                PieChart(
-                    percentage: (100.0 - entry.monthPercentage), size: 80,
-                    useBatteryStyle: true
+                CircleProgressView(
+                    value: 1 - entry.monthPercentage / 100,
+                    color: getProgressColor(
+                        for: entry.monthPercentage, useBatteryStyle: true),
+                    size: 80,
+                    lineWidth: 10
                 )
                 .frame(width: 80, height: 120)
                 Text("Month")
@@ -143,9 +163,12 @@ struct TimeBatteryWidgetView: View {
             .padding()
 
             VStack {
-                PieChart(
-                    percentage: (100.0 - entry.yearPercentage), size: 80,
-                    useBatteryStyle: true
+                CircleProgressView(
+                    value: 1 - entry.yearPercentage / 100,
+                    color: getProgressColor(
+                        for: entry.yearPercentage, useBatteryStyle: true),
+                    size: 80,
+                    lineWidth: 10
                 )
                 .frame(width: 80, height: 120)
                 Text("Year")
@@ -178,15 +201,19 @@ struct YearProgressWidgetView: View {
 
     var body: some View {
         VStack {
-            PieChart(percentage: entry.yearPercentage, size: 110)
-                .containerBackground(for: .widget) {
-                    Color.clear
-                }
-                .frame(height: 130)
+            CircleProgressView(
+                value: entry.yearPercentage / 100,
+                color: getProgressColor(for: entry.yearPercentage), size: 110,
+                lineWidth: 10
+            )
+            .frame(height: 130)
             Text("Year")
                 .font(.system(size: 14))
         }
         .padding()
+        .containerBackground(for: .widget) {
+            Color.clear
+        }
     }
 }
 
@@ -211,18 +238,21 @@ struct YearBatteryWidgetView: View {
 
     var body: some View {
         VStack {
-            PieChart(
-                percentage: (100.0 - entry.yearPercentage), size: 110,
-                useBatteryStyle: true
+            CircleProgressView(
+                value: 1 - entry.yearPercentage / 100,
+                color: getProgressColor(
+                    for: entry.yearPercentage, useBatteryStyle: true),
+                size: 110,
+                lineWidth: 10
             )
-            .containerBackground(for: .widget) {
-                Color.clear
-            }
             .frame(height: 130)
             Text("Year")
                 .font(.system(size: 14))
         }
         .padding()
+        .containerBackground(for: .widget) {
+            Color.clear
+        }
     }
 }
 
@@ -245,15 +275,19 @@ struct MonthProgressWidgetView: View {
 
     var body: some View {
         VStack {
-            PieChart(percentage: entry.monthPercentage, size: 110)
-                .containerBackground(for: .widget) {
-                    Color.clear
-                }
-                .frame(height: 130)
+            CircleProgressView(
+                value: entry.monthPercentage / 100,
+                color: getProgressColor(for: entry.monthPercentage), size: 110,
+                lineWidth: 10
+            )
+            .frame(height: 130)
             Text("Month")
                 .font(.system(size: 14))
         }
         .padding()
+        .containerBackground(for: .widget) {
+            Color.clear
+        }
     }
 }
 
@@ -278,18 +312,21 @@ struct MonthBatteryWidgetView: View {
 
     var body: some View {
         VStack {
-            PieChart(
-                percentage: (100.0 - entry.monthPercentage), size: 110,
-                useBatteryStyle: true
+            CircleProgressView(
+                value: 1 - entry.monthPercentage / 100,
+                color: getProgressColor(
+                    for: entry.monthPercentage, useBatteryStyle: true),
+                size: 110,
+                lineWidth: 10
             )
-            .containerBackground(for: .widget) {
-                Color.clear
-            }
             .frame(height: 130)
             Text("Month")
                 .font(.system(size: 14))
         }
         .padding()
+        .containerBackground(for: .widget) {
+            Color.clear
+        }
     }
 }
 
@@ -312,15 +349,19 @@ struct DayProgressWidgetView: View {
 
     var body: some View {
         VStack {
-            PieChart(percentage: entry.dayPercentage, size: 110)
-                .containerBackground(for: .widget) {
-                    Color.clear
-                }
-                .frame(height: 130)
+            CircleProgressView(
+                value: entry.dayPercentage / 100,
+                color: getProgressColor(for: entry.dayPercentage), size: 110,
+                lineWidth: 10
+            )
+            .frame(height: 130)
             Text("Day")
                 .font(.system(size: 14))
         }
         .padding()
+        .containerBackground(for: .widget) {
+            Color.clear
+        }
     }
 }
 
@@ -345,18 +386,20 @@ struct DayBatteryWidgetView: View {
 
     var body: some View {
         VStack {
-            PieChart(
-                percentage: (100.0 - entry.dayPercentage), size: 110,
-                useBatteryStyle: true
+            CircleProgressView(
+                value: 1 - entry.dayPercentage / 100,
+                color: getProgressColor(
+                    for: entry.dayPercentage, useBatteryStyle: true), size: 110,
+                lineWidth: 10
             )
-            .containerBackground(for: .widget) {
-                Color.clear
-            }
             .frame(height: 130)
             Text("Day")
                 .font(.system(size: 14))
         }
         .padding()
+        .containerBackground(for: .widget) {
+            Color.clear
+        }
     }
 }
 
@@ -374,6 +417,32 @@ struct LinearProgressWidget: Widget {
     }
 }
 
+struct LinearProgressRow: View {
+    var title: String
+    var progress: Double
+    var color: Color
+
+    var body: some View {
+        HStack {
+            // date information
+            Text(title)
+                .font(.system(size: 14))
+                .frame(width: 40, alignment: .leading)
+
+            // linear progress
+            LinearProgressView(value: progress / 100.0, shape: Capsule())
+                .tint(color)
+                .frame(height: 8)
+
+            // percentage text
+            Text("\(Int(progress))%")
+                .font(.system(size: 14))
+                .frame(width: 40, alignment: .trailing)
+        }
+        .padding([.top, .bottom], 10)
+    }
+}
+
 struct LinearProgressWidgetView: View {
     private let dayFormatter = DateUtils.getDateFormatter(format: "EEE")
     private let monthFormatter = DateUtils.getDateFormatter(format: "MMM")
@@ -386,19 +455,19 @@ struct LinearProgressWidgetView: View {
             LinearProgressRow(
                 title: dayFormatter.string(from: Date()),
                 progress: entry.dayPercentage,
-                color: progressColor(for: entry.dayPercentage)
+                color: getProgressColor(for: entry.dayPercentage)
             )
 
             LinearProgressRow(
                 title: monthFormatter.string(from: Date()),
                 progress: entry.monthPercentage,
-                color: progressColor(for: entry.monthPercentage)
+                color: getProgressColor(for: entry.monthPercentage)
             )
 
             LinearProgressRow(
                 title: yearFormatter.string(from: Date()),
                 progress: entry.yearPercentage,
-                color: progressColor(for: entry.yearPercentage)
+                color: getProgressColor(for: entry.yearPercentage)
             )
         }
         .padding()
@@ -406,15 +475,28 @@ struct LinearProgressWidgetView: View {
             Color.clear
         }
     }
+}
 
-    private func progressColor(for progress: Double) -> Color {
-        switch progress {
+func getProgressColor(for percentage: Double, useBatteryStyle: Bool = false)
+    -> Color
+{
+    if useBatteryStyle {
+        switch percentage {
         case 0..<80:
             return .green
         case 80..<90:
             return .yellow
         default:
+            return .red
+        }
+    } else {
+        switch percentage {
+        case 0.0..<80:
+            return .green
+        case 80..<90:
             return .blue
+        default:
+            return Color(red: 0.9, green: 0.6, blue: 0.8)  // pink
         }
     }
 }

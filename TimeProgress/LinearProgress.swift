@@ -23,33 +23,9 @@ struct LinearProgressView<Shape: SwiftUI.Shape>: View {
     }
 }
 
-struct LinearProgressRow: View {
-    var title: String
-    var progress: Double
-    var color: Color
-
-    var body: some View {
-        HStack {
-            Text(title)
-                .font(.system(size: 14))
-                .frame(width: 40, alignment: .leading)
-
-            LinearProgressView(value: progress / 100.0, shape: Capsule())
-                .tint(color)
-                .frame(height: 8)
-
-            Text("\(Int(progress))%")
-                .font(.system(size: 14))
-                .frame(width: 40, alignment: .trailing)
-        }
-        .padding([.top, .bottom], 10)
-    }
-}
-
 #Preview {
     LinearProgressView(value: 0.6, shape: Capsule())
         .tint(Gradient(colors: [.purple, .blue]))
         .frame(width: 200, height: 20)
         .padding(10)
 }
-

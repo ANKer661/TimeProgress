@@ -54,9 +54,9 @@
 		67F50A5A2D63B818008AAE4B /* Exceptions for "TimeProgress" folder in "TPWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				CircleProgress.swift,
 				DateUtils.swift,
 				LinearProgress.swift,
-				PieChart.swift,
 			);
 			target = 67F50A3F2D63B6D7008AAE4B /* TPWidgetExtension */;
 		};
@@ -387,6 +387,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TimeProgress/Preview Content\"";
+				DEVELOPMENT_TEAM = V47S72XND8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -412,6 +413,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TimeProgress/Preview Content\"";
+				DEVELOPMENT_TEAM = V47S72XND8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -435,6 +437,7 @@
 				CODE_SIGN_ENTITLEMENTS = TPWidget/TPWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V47S72XND8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TPWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TPWidget;
@@ -462,6 +465,7 @@
 				CODE_SIGN_ENTITLEMENTS = TPWidget/TPWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V47S72XND8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TPWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TPWidget;
