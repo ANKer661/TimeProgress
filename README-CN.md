@@ -1,4 +1,4 @@
-# 简体中文
+# TimeProgress
 
 <img src="https://github.com/ANKer661/TimeProgress/blob/main/TimeProgress/Assets.xcassets/AppIcon.appiconset/FDBDC03A-8AA9-44AF-AAB6-B3E02612147A.png" width="150" />
 
