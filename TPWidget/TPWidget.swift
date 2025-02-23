@@ -78,7 +78,7 @@ struct TimeProgressWidgetView: View {
                     lineWidth: 10
                 )
                 .frame(width: 80, height: 120)
-                Text("Day")
+                Text(DateUtils.dayFormatter.string(from: Date()))
                     .font(.system(size: 14))
             }
             .padding()
@@ -91,7 +91,7 @@ struct TimeProgressWidgetView: View {
                     lineWidth: 10
                 )
                 .frame(width: 80, height: 120)
-                Text("Month")
+                Text(DateUtils.monthFormatter.string(from: Date()))
                     .font(.system(size: 14))
             }
             .padding()
@@ -104,7 +104,7 @@ struct TimeProgressWidgetView: View {
                     lineWidth: 10
                 )
                 .frame(width: 80, height: 120)
-                Text("Year")
+                Text(DateUtils.yearFormatter.string(from: Date()))
                     .font(.system(size: 14))
             }
             .padding()
@@ -143,7 +143,7 @@ struct TimeBatteryWidgetView: View {
                     lineWidth: 10
                 )
                 .frame(width: 80, height: 120)
-                Text("Day")
+                Text(DateUtils.dayFormatter.string(from: Date()))
                     .font(.system(size: 14))
             }
             .padding()
@@ -157,7 +157,7 @@ struct TimeBatteryWidgetView: View {
                     lineWidth: 10
                 )
                 .frame(width: 80, height: 120)
-                Text("Month")
+                Text(DateUtils.monthFormatter.string(from: Date()))
                     .font(.system(size: 14))
             }
             .padding()
@@ -171,7 +171,7 @@ struct TimeBatteryWidgetView: View {
                     lineWidth: 10
                 )
                 .frame(width: 80, height: 120)
-                Text("Year")
+                Text(DateUtils.yearFormatter.string(from: Date()))
                     .font(.system(size: 14))
             }
             .padding()
@@ -207,7 +207,7 @@ struct YearProgressWidgetView: View {
                 lineWidth: 10
             )
             .frame(height: 130)
-            Text("Year")
+            Text(DateUtils.yearFormatter.string(from: Date()))
                 .font(.system(size: 14))
         }
         .padding()
@@ -246,7 +246,7 @@ struct YearBatteryWidgetView: View {
                 lineWidth: 10
             )
             .frame(height: 130)
-            Text("Year")
+            Text(DateUtils.yearFormatter.string(from: Date()))
                 .font(.system(size: 14))
         }
         .padding()
@@ -281,7 +281,7 @@ struct MonthProgressWidgetView: View {
                 lineWidth: 10
             )
             .frame(height: 130)
-            Text("Month")
+            Text(DateUtils.monthFormatter.string(from: Date()))
                 .font(.system(size: 14))
         }
         .padding()
@@ -320,7 +320,7 @@ struct MonthBatteryWidgetView: View {
                 lineWidth: 10
             )
             .frame(height: 130)
-            Text("Month")
+            Text(DateUtils.monthFormatter.string(from: Date()))
                 .font(.system(size: 14))
         }
         .padding()
@@ -355,7 +355,7 @@ struct DayProgressWidgetView: View {
                 lineWidth: 10
             )
             .frame(height: 130)
-            Text("Day")
+            Text(DateUtils.dayFormatter.string(from: Date()))
                 .font(.system(size: 14))
         }
         .padding()
@@ -393,7 +393,7 @@ struct DayBatteryWidgetView: View {
                 lineWidth: 10
             )
             .frame(height: 130)
-            Text("Day")
+            Text(DateUtils.dayFormatter.string(from: Date()))
                 .font(.system(size: 14))
         }
         .padding()
@@ -423,6 +423,7 @@ struct LinearProgressRow: View {
     var color: Color
 
     var body: some View {
+     
         HStack {
             // date information
             Text(title)
@@ -445,8 +446,6 @@ struct LinearProgressRow: View {
 
 struct LinearProgressWidgetView: View {
     private let dayFormatter = DateUtils.getDateFormatter(format: "EEE")
-    private let monthFormatter = DateUtils.getDateFormatter(format: "MMM")
-    private let yearFormatter = DateUtils.getDateFormatter(format: "yyyy")
 
     var entry: TimeProgressProvider.Entry
 
@@ -459,13 +458,13 @@ struct LinearProgressWidgetView: View {
             )
 
             LinearProgressRow(
-                title: monthFormatter.string(from: Date()),
+                title: DateUtils.monthFormatter.string(from: Date()),
                 progress: entry.monthPercentage,
                 color: getProgressColor(for: entry.monthPercentage)
             )
 
             LinearProgressRow(
-                title: yearFormatter.string(from: Date()),
+                title: DateUtils.yearFormatter.string(from: Date()),
                 progress: entry.yearPercentage,
                 color: getProgressColor(for: entry.yearPercentage)
             )
