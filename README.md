@@ -4,6 +4,8 @@
 
 Track the progress of the year, month, and day right from your Home Screen!
 
+[![简体中文](https://img.shields.io/badge/%F0%9F%87%A8%F0%9F%87%B3-简体中文-red)](README-CN.md)
+
 ## Features
 
 - **Automatic Updates:** Widgets refresh every 15 minutes.
