@@ -31,7 +31,7 @@ struct CircleProgressView: View {
                 .rotationEffect(.degrees(-90))  // start at the top
 
             // percentage text
-            Text("\(Int(value * 100))%")
+            Text("\(Int((round(100 * value))))%")
                 .font(.system(size: size * 0.2))
                 .foregroundColor(.primary)
         }

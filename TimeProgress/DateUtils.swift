@@ -9,7 +9,7 @@ import Foundation
 
 struct DateUtils {
     static private var formatterCache = [String: DateFormatter]()
-    
+
     static func calculateYearPercentage() -> Double {
         let calendar = Calendar.current
         let today = Date()
@@ -78,10 +78,10 @@ struct DateUtils {
 
         return Double(passedMinutes) / Double(totalMinutesInADay) * 100
     }
-    
+
     static func getDateFormatter(format: String) -> DateFormatter {
         assert(!format.isEmpty, "Format string must not be empty")
-        
+
         if let cachedFormatter = formatterCache[format] {
             return cachedFormatter
         }
@@ -91,4 +91,8 @@ struct DateUtils {
         formatterCache[format] = formatter
         return formatter
     }
+
+    static let dayFormatter: DateFormatter = getDateFormatter(format: "EEE, dd")
+    static let monthFormatter: DateFormatter = getDateFormatter(format: "MMM")
+    static let yearFormatter: DateFormatter = getDateFormatter(format: "yyyy")
 }
